@@ -1,49 +1,49 @@
 GIT
   remote: https://github.com/rspec/rspec-core.git
-  revision: e7c5d030966a7e8dad3e0a67c61920c4f2437c15
-  branch: master
+  revision: c6315d6e899796d3d0203dc8b656708a3ebca9a1
+  branch: main
   specs:
-    rspec-core (3.10.0.pre)
-      rspec-support (= 3.10.0.pre)
+    rspec-core (3.11.0.pre)
+      rspec-support (= 3.11.0.pre)
 
 GIT
   remote: https://github.com/rspec/rspec-expectations.git
-  revision: e63ff4765e1cd2798b02ddddad259f1104ef87a5
-  branch: master
+  revision: ac36c3dd8f163da1cdee89b9fbd264bb172db9f2
+  branch: main
   specs:
-    rspec-expectations (3.10.0.pre)
+    rspec-expectations (3.11.0.pre)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (= 3.10.0.pre)
+      rspec-support (= 3.11.0.pre)
 
 GIT
   remote: https://github.com/rspec/rspec-mocks.git
-  revision: 0a52e0a86b126b4bab94d277b2ad99a7492dc37d
-  branch: master
+  revision: 7fc7bf823646c87c6fb342ee1b8e03d7fb29da3b
+  branch: main
   specs:
-    rspec-mocks (3.10.0.pre)
+    rspec-mocks (3.11.0.pre)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (= 3.10.0.pre)
+      rspec-support (= 3.11.0.pre)
 
 GIT
   remote: https://github.com/rspec/rspec-rails.git
-  revision: 01704c50c146f720db914724c25681781ecefb23
-  branch: master
+  revision: ea09924944d670c0abc6075f758f58322cff373f
+  branch: main
   specs:
     rspec-rails (4.1.0.pre)
       actionpack (>= 4.2)
       activesupport (>= 4.2)
       railties (>= 4.2)
-      rspec-core (= 3.10.0.pre)
-      rspec-expectations (= 3.10.0.pre)
-      rspec-mocks (= 3.10.0.pre)
-      rspec-support (= 3.10.0.pre)
+      rspec-core (= 3.11.0.pre)
+      rspec-expectations (= 3.11.0.pre)
+      rspec-mocks (= 3.11.0.pre)
+      rspec-support (= 3.11.0.pre)
 
 GIT
   remote: https://github.com/rspec/rspec-support.git
-  revision: 6447b0c2c9d1cd3e1504784fb85675ca9ae7b7c3
-  branch: master
+  revision: 9a2a668c83b858901052329518da414c299405ac
+  branch: main
   specs:
-    rspec-support (3.10.0.pre)
+    rspec-support (3.11.0.pre)
 
 GEM
   remote: https://rubygems.org/
@@ -249,7 +249,7 @@ DEPENDENCIES
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)
-  rails (~> 6.0.3, >= 6.0.3.2)
+  rails (~> 6.0, >= 6.0.3.4)
   rspec-core!
   rspec-expectations!
   rspec-mocks!
