@@ -15,17 +15,17 @@ ActiveRecord::Schema.define(version: 2020_09_10_051111) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "auctions", force: :cascade do |t|
+  create_table "drafts", force: :cascade do |t|
     t.string "name", null: false
     t.bigint "user_id", null: false
-    t.index ["name"], name: "index_auctions_on_name"
-    t.index ["user_id"], name: "index_auctions_on_user_id"
+    t.index ["name"], name: "index_drafts_on_name"
+    t.index ["user_id"], name: "index_drafts_on_user_id"
   end
 
   create_table "memberships", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "auction_id", null: false
-    t.index ["auction_id"], name: "index_memberships_on_auction_id"
+    t.bigint "draft_id", null: false
+    t.index ["draft_id"], name: "index_memberships_on_draft_id"
     t.index ["user_id"], name: "index_memberships_on_user_id"
   end
 
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2020_09_10_051111) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
-  add_foreign_key "auctions", "users"
-  add_foreign_key "memberships", "auctions"
+  add_foreign_key "drafts", "users"
+  add_foreign_key "memberships", "drafts"
   add_foreign_key "memberships", "users"
 end

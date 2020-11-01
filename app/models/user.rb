@@ -8,8 +8,8 @@ class User < ApplicationRecord
 
   # Association
   has_many :memberships
-  has_many :auctions, through: :memberships
-  has_many :managed_auctions, class_name: 'Auction', foreign_key: 'user_id', dependent: :destroy
+  has_many :drafts, through: :memberships
+  has_many :managed_drafts, class_name: 'Draft', foreign_key: 'user_id', dependent: :destroy
 
   # Validations
   validates :username, presence: true, uniqueness: { case_sensitive: false }

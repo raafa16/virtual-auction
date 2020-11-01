@@ -1,4 +1,4 @@
-class Auction < ApplicationRecord
+class Draft < ApplicationRecord
     # Associations
     has_many :memberships
     has_many :users, through: :memberships
