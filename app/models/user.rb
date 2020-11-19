@@ -7,7 +7,7 @@ class User < ApplicationRecord
   attr_writer :login
 
   # Association
-  has_many :memberships
+  has_many :memberships, dependent: :destroy
   has_many :drafts, through: :memberships
   has_many :managed_drafts, class_name: 'Draft', foreign_key: 'user_id', dependent: :destroy
 

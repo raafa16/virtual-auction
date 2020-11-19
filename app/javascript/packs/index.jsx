@@ -4,23 +4,17 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import PropTypes from 'prop-types'
-
-const Hello = props => (
-  <div>Hello {props.name}!</div>
-)
-
-Hello.defaultProps = {
-  name: 'David'
-}
-
-Hello.propTypes = {
-  name: PropTypes.string
-}
+import { Provider, teamsTheme } from '@fluentui/react-northstar'
+import App from '../components/App'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <Hello name="React" />,
+    <Provider theme={teamsTheme}>
+      <Router>
+        <Route path='/' component={App} />
+      </Router>
+    </Provider>,
     document.body.appendChild(document.createElement('div')),
   )
 })
