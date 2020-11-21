@@ -11,11 +11,6 @@ module Api
 
       private
 
-      # Used For compound documents with fast_jsonapi
-      def options
-        @options ||= { include: %i[users] }
-      end
-
       # Get all my drafts
       def managed_drafts
         @managed_drafts ||= current_user.managed_drafts
