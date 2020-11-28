@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { TABLES } from '../../lib/Constants'
-import { Table } from 'rsuite';
+import { Table, Button } from 'rsuite';
 const { Column, HeaderCell, Cell, Pagination } = Table;
 
 const DraftsTable = ({drafts, tableType}) => {
   const [tableData, setTableData] = useState([])
+  const [tableLoading, setTableLoading] = useState(true)
+
 
   useEffect(() => {
     let data = drafts.data.map( (draft, index) => {
@@ -16,31 +18,33 @@ const DraftsTable = ({drafts, tableType}) => {
       }
     });
     setTableData(data)
+    setTableLoading(false)
   }, [drafts] )
 
   return (
     <Table
-      height={400}
+      height={500}
       data={tableData}
       onRowClick={data => {
         console.log(data);
       }}
+      loading={tableLoading}
     >
-      <Column flexGrow={2} fixed>
+      <Column flexGrow={2} fixed verticalAlign="middle">
         <HeaderCell>Name</HeaderCell>
         <Cell dataKey="name" />
       </Column>
 
-      <Column flexGrow={1} fixed>
+      <Column flexGrow={1} fixed verticalAlign="middle">
         <HeaderCell>Manager</HeaderCell>
         <Cell dataKey="manager" />
       </Column>
 
-      <Column flexGrow={2} fixed>
+      <Column flexGrow={2} fixed verticalAlign="middle">
         <HeaderCell>Email</HeaderCell>
         <Cell dataKey="email" />
       </Column>
-      <Column flexGrow={2} align="center" fixed="right">
+      <Column flexGrow={2} align="center" fixed="right" verticalAlign="middle">
         <HeaderCell>Action(s)</HeaderCell>
         <Cell dataKey="id">
           {rowData => {
@@ -51,20 +55,20 @@ const DraftsTable = ({drafts, tableType}) => {
               case TABLES.managed_drafts:
                 return (
                   <span>
-                    <a onClick={handleAction}> Edit </a> |{' '}
-                    <a onClick={handleAction}> Delete </a>
+                    <Button color="orange" onClick={handleAction}>Edit</Button>
+                    <Button color="red" onClick={handleAction}>Delete</Button>
                   </span>
                 )
               case TABLES.joinable_drafts:
                 return (
                   <span>
-                    <a onClick={handleAction}> Join </a>
+                    <Button color="green" onClick={handleAction}>Join</Button>
                   </span>
                 )
               case TABLES.joined_drafts:
                 return (
                   <span>
-                    <a onClick={handleAction}> Leave </a>
+                    <Button color="red" onClick={handleAction}>Leave</Button>
                   </span>
                 )
               }
