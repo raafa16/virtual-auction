@@ -3,36 +3,29 @@ import { TABLES, DRAFTS_TABLE_HEADERS } from '../../lib/Constants'
 import { Header, Table } from 'rsuite';
 const { Column, HeaderCell, Cell, Pagination } = Table;
 
-// const actionables = (tableType, draft) => {
+// const actionables = (tableType, handleAction) => {
 //   switch(tableType) {
 //     case TABLES.managed_drafts:
-//       return {
-//         content: (
-//           <Flex gap="gap.smaller" vAlign="center">
-//             <Button content="Primary" primary  content="Edit" onClick={()=> console.log('edit')} />
-//             <Button content="Secondary" secondary content="Delete" onClick={()=> console.log('delete')}/>
-//           </Flex>
-//         ),
-//         accessibility: gridCellMultipleFocusableBehavior,
-//       }
+//       return (
+//         <span>
+//           <a onClick={handleAction}> Edit </a> |{' '}
+//           <a onClick={handleAction}> Remove </a>
+//         </span>
+//       )
 //     case TABLES.joinable_drafts:
-//       return {
-//         content: (
-//           <Flex gap="gap.smaller" vAlign="center">
-//             <Button content="Primary" primary  content="Join" onClick={()=> console.log('join')} />
-//           </Flex>
-//         ),
-//         accessibility: gridCellMultipleFocusableBehavior,
-//       }
+//       return (
+//         <span>
+//           <a onClick={handleAction}> Edit </a> |{' '}
+//           <a onClick={handleAction}> Remove </a>
+//         </span>
+//       )
 //     case TABLES.joined_drafts:
-//       return {
-//         content: (
-//           <Flex gap="gap.smaller" vAlign="center">
-//             <Button content="Primary" primary  content="Leave" onClick={()=> console.log('leave')} />
-//           </Flex>
-//         ),
-//         accessibility: gridCellMultipleFocusableBehavior,
-//       }
+//       return (
+//         <span>
+//           <a onClick={handleAction}> Edit </a> |{' '}
+//           <a onClick={handleAction}> Remove </a>
+//         </span>
+//       )
 //     }
 // }
 
@@ -59,33 +52,48 @@ const DraftsTable = ({drafts, tableType}) => {
         console.log(data);
       }}
     >
-      <Column width={130} align="center" fixed>
+      <Column flexGrow={2} fixed>
         <HeaderCell>Name</HeaderCell>
         <Cell dataKey="name" />
       </Column>
 
-      <Column width={130} fixed>
+      <Column flexGrow={1} fixed>
         <HeaderCell>Manager</HeaderCell>
         <Cell dataKey="manager" />
       </Column>
 
-      <Column width={130}>
+      <Column flexGrow={2} fixed>
         <HeaderCell>Email</HeaderCell>
         <Cell dataKey="email" />
       </Column>
-      <Column width={120} fixed="right">
+      <Column flexGrow={2} align="center" fixed="right">
         <HeaderCell>Action(s)</HeaderCell>
         <Cell dataKey="id">
           {rowData => {
             function handleAction() {
               alert(`id:${rowData.id}`);
             }
-            return (
-              <span>
-                <a onClick={handleAction}> Edit </a> |{' '}
-                <a onClick={handleAction}> Remove </a>
-              </span>
-            );
+            switch(tableType) {
+              case TABLES.managed_drafts:
+                return (
+                  <span>
+                    <a onClick={handleAction}> Edit </a> |{' '}
+                    <a onClick={handleAction}> Delete </a>
+                  </span>
+                )
+              case TABLES.joinable_drafts:
+                return (
+                  <span>
+                    <a onClick={handleAction}> Join </a>
+                  </span>
+                )
+              case TABLES.joined_drafts:
+                return (
+                  <span>
+                    <a onClick={handleAction}> Leave </a>
+                  </span>
+                )
+              }
           }}
         </Cell>
       </Column>
