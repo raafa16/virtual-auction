@@ -1,37 +1,10 @@
-import { Table, Button, Flex, MenuButton } from '@fluentui/react-northstar'
+import { Table, Button, Flex } from '@fluentui/react-northstar'
 import {
   gridNestedBehavior,
-  gridCellWithFocusableElementBehavior,
   gridCellMultipleFocusableBehavior,
 } from '@fluentui/accessibility'
-import React, {useEffect} from 'react'
-import { MoreIcon } from '@fluentui/react-icons-northstar'
-import { TABLES } from '../../lib/Constants'
-
-
-import Search from './Search'
-
-const header = {
-  key: 'header',
-  items: [
-    {
-      content: 'Name',
-      key: 'name',
-    },
-    {
-      content: 'Manager',
-      key: 'manager',
-    },
-    {
-      content: 'Email',
-      key: 'email',
-    },
-    {
-      content: 'Actions',
-      key: 'actions',
-    }
-  ],
-}
+import React from 'react'
+import { TABLES, DRAFTS_TABLE_HEADER } from '../../lib/Constants'
 
 const actionables = (tableType, draft) => {
   switch(tableType) {
@@ -67,8 +40,6 @@ const actionables = (tableType, draft) => {
 }
 
 const DraftsTable = ({drafts, tableType}) => {
-  console.log(drafts.data)
-  console.log(tableType)
   const rows = drafts.data.map( (draft, index) => {
     return {
       key: draft.id,
@@ -99,15 +70,15 @@ const DraftsTable = ({drafts, tableType}) => {
 
   return (
     <>
-      <Search />
       <Table
         variables={{
           cellContentOverflow: 'none',
         }}
-        header={header}
+        header={DRAFTS_TABLE_HEADER}
         rows={rows}
         aria-label="Nested navigation"
         accessibility={gridNestedBehavior}
+        styles={styles}
       />
     </>
   )
