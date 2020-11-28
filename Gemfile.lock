@@ -1,14 +1,14 @@
 GIT
   remote: https://github.com/faker-ruby/faker.git
-  revision: a1ffab7246fe7a77438f9e582e5b2ffacba32bb6
+  revision: e6604d0930cca531b2998ae306792f70b9bcc14d
   branch: master
   specs:
-    faker (2.14.0)
+    faker (2.15.1)
       i18n (>= 1.6, < 2)
 
 GIT
   remote: https://github.com/rspec/rspec-core.git
-  revision: c6315d6e899796d3d0203dc8b656708a3ebca9a1
+  revision: bbe35666734e36706e18b8fa320ed037f59ccd4a
   branch: main
   specs:
     rspec-core (3.11.0.pre)
@@ -16,7 +16,7 @@ GIT
 
 GIT
   remote: https://github.com/rspec/rspec-expectations.git
-  revision: ac36c3dd8f163da1cdee89b9fbd264bb172db9f2
+  revision: 30cf0f668816d1ae7060294d5db00f9fb43dec44
   branch: main
   specs:
     rspec-expectations (3.11.0.pre)
@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/rspec/rspec-mocks.git
-  revision: 7fc7bf823646c87c6fb342ee1b8e03d7fb29da3b
+  revision: fba5b1b25972cc3cc1754cecbf763b879deda71a
   branch: main
   specs:
     rspec-mocks (3.11.0.pre)
@@ -34,7 +34,7 @@ GIT
 
 GIT
   remote: https://github.com/rspec/rspec-rails.git
-  revision: f057558875ab12e2e2f372ca12220fbf7a2db2d8
+  revision: 9217638aff96df56753eeafe60e16bc4c35b8566
   branch: main
   specs:
     rspec-rails (4.1.0.pre)
@@ -48,7 +48,7 @@ GIT
 
 GIT
   remote: https://github.com/rspec/rspec-support.git
-  revision: 9a2a668c83b858901052329518da414c299405ac
+  revision: 12069e1c1ad1852b7970e7fcd419d56a8a9e6240
   branch: main
   specs:
     rspec-support (3.11.0.pre)
@@ -139,10 +139,10 @@ GEM
       concurrent-ruby (~> 1.0)
     jsonapi-serializer (2.1.0)
       activesupport (>= 4.2)
-    listen (3.3.1)
+    listen (3.3.2)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    loofah (2.7.0)
+    loofah (2.8.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
@@ -240,7 +240,7 @@ GEM
     websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    zeitwerk (2.4.1)
+    zeitwerk (2.4.2)
 
 PLATFORMS
   ruby
