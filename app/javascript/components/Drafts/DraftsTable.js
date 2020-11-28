@@ -1,33 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { TABLES, DRAFTS_TABLE_HEADERS } from '../../lib/Constants'
-import { Header, Table } from 'rsuite';
+import { TABLES } from '../../lib/Constants'
+import { Table } from 'rsuite';
 const { Column, HeaderCell, Cell, Pagination } = Table;
-
-// const actionables = (tableType, handleAction) => {
-//   switch(tableType) {
-//     case TABLES.managed_drafts:
-//       return (
-//         <span>
-//           <a onClick={handleAction}> Edit </a> |{' '}
-//           <a onClick={handleAction}> Remove </a>
-//         </span>
-//       )
-//     case TABLES.joinable_drafts:
-//       return (
-//         <span>
-//           <a onClick={handleAction}> Edit </a> |{' '}
-//           <a onClick={handleAction}> Remove </a>
-//         </span>
-//       )
-//     case TABLES.joined_drafts:
-//       return (
-//         <span>
-//           <a onClick={handleAction}> Edit </a> |{' '}
-//           <a onClick={handleAction}> Remove </a>
-//         </span>
-//       )
-//     }
-// }
 
 const DraftsTable = ({drafts, tableType}) => {
   const [tableData, setTableData] = useState([])

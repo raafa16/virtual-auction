@@ -18,21 +18,3 @@ export const MENU_ITEMS = [
     label: 'Joined Drafts',
   },
 ]
-
-export const DRAFTS_TABLE_HEADERS = [
-  {
-    content: 'Name',
-    key: 'name',
-    width: 70
-  },
-  {
-    content: 'Manager',
-    key: 'manager',
-    width: 200
-  },
-  {
-    content: 'Email',
-    key: 'email',
-    width: 200
-  }
-]
