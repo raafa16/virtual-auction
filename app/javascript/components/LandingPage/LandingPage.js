@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Header, Button, AddIcon, ContactGroupIcon, PlayIcon , Flex } from '@fluentui/react-northstar'
 
 const LandingPage = () => {
   return (
@@ -23,14 +22,6 @@ const LandingPage = () => {
       </div>
     </>
   )
-}
-
-const styles = {
-  container: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
 }
 
 export default LandingPage
