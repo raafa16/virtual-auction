@@ -1001,6 +1001,15 @@
     lodash "^4.17.15"
     lodash-es "^4.17.15"
 
+"@rsuite/responsive-nav@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@rsuite/responsive-nav/-/responsive-nav-0.0.10.tgz#2f7d5b7cae5d67bdf96f8894a373d09d086d3802"
+  integrity sha512-C5kASKLFOFXyctRQ9gz2f/ABvFStdTvSt4hC5eucfGpIFjAKpGLExHwY/qe/ABEkoKBp6TzWI1AHX77z76sWKg==
+  dependencies:
+    core-js "3"
+    element-resize-event "^3.0.3"
+    prop-types "^15.6.2"
+
 "@types/classnames@^2.2.10":
   version "2.2.11"
   resolved "https://registry.yarnpkg.com/@types/classnames/-/classnames-2.2.11.tgz#2521cc86f69d15c5b90664e4829d84566052c1cf"
@@ -2313,15 +2322,15 @@ core-js-compat@^3.7.0:
     browserslist "^4.14.7"
     semver "7.0.0"
 
+core-js@3, core-js@^3.4.0:
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.8.0.tgz#0fc2d4941cadf80538b030648bb64d230b4da0ce"
+  integrity sha512-W2VYNB0nwQQE7tKS7HzXd7r2y/y2SVJl4ga6oH/dnaLFzM0o2lB2P3zCkWj5Wc/zyMYjtgd5Hmhk0ObkQFZOIA==
+
 core-js@^1.0.0:
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
   integrity sha1-ZSKUwUZR2yj6k70tX/KYOk8IxjY=
-
-core-js@^3.4.0:
-  version "3.8.0"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.8.0.tgz#0fc2d4941cadf80538b030648bb64d230b4da0ce"
-  integrity sha512-W2VYNB0nwQQE7tKS7HzXd7r2y/y2SVJl4ga6oH/dnaLFzM0o2lB2P3zCkWj5Wc/zyMYjtgd5Hmhk0ObkQFZOIA==
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"

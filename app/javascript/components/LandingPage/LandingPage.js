@@ -1,26 +1,34 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import {
+  Container,
+  Header,
+  Content,
+  Footer,
+  FlexboxGrid
+} from 'rsuite';
 
 const LandingPage = () => {
   return (
-    <>
-      <Header align="center" content="Welcome to Fantasy Football Draft Simulator" description="Simulate, Create or Join a Draft" />
-      <div>
-        <Flex gap="gap.large" hAlign="center" vAlign="center">
-          <Link to="/simulate">
-            <Button icon={<PlayIcon />} size="largest" content="Simulate Draft" text />
-          </Link>
-
-          <Link to="/drafts/new">
-            <Button icon={<AddIcon />} size="largest" content="Create a new Draft" text />
-          </Link>
-
-          <Link to="/drafts">
-            <Button icon={<ContactGroupIcon />} size="largest" content="Join a Draft" text />
-          </Link>
-        </Flex>
-      </div>
-    </>
+    <Container>
+      <Header>Welcome to Fantasy Football Draft Simulator</Header>
+      <Content>
+        <div>
+          <FlexboxGrid justify="space-around">
+            <Link to="/simulate">
+              <FlexboxGrid.Item colspan={8}>colspan={8}</FlexboxGrid.Item>
+            </Link>
+            <Link to="/drafts/new">
+              <FlexboxGrid.Item colspan={8}>colspan={8}</FlexboxGrid.Item>
+            </Link>
+            <Link to="/drafts">
+              <FlexboxGrid.Item colspan={8}>colspan={8}</FlexboxGrid.Item>
+            </Link>
+          </FlexboxGrid>
+        </div>
+      </Content>
+      <Footer>Footer</Footer>
+    </Container>
   )
 }
 

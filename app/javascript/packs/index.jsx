@@ -4,17 +4,15 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Provider, teamsTheme } from '@fluentui/react-northstar'
 import App from '../components/App'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import 'rsuite/dist/styles/rsuite-default.css'
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <Provider theme={teamsTheme}>
-      <Router>
-        <Route path='/' component={App} />
-      </Router>
-    </Provider>,
+    <Router>
+      <Route path='/' component={App} />
+    </Router>,
     document.body.appendChild(document.createElement('div')),
   )
 })

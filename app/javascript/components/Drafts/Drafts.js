@@ -1,25 +1,27 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Menu, tabListBehavior } from '@fluentui/react-northstar'
 import DraftsTable from './DraftsTable'
 import { MENU_ITEMS, TABLES } from '../../lib/Constants'
 
+import ResponsiveNav from '@rsuite/responsive-nav'
+
 const Drafts = () => {
   const [drafts, setDrafts] = useState([])
-  const [activeIndex, setActiveIndex] = useState(0)
+  const [loading, setLoading] = useState(true)
+  const [activeKey, setActiveKey] = useState('managed_drafts');
 
   useEffect(() => {
     axios.get('/api/v1/drafts.json')
     .then(response => {
       setDrafts(response.data)
-      console.log(drafts)
+      setLoading(false)
     })
     .catch(response => console.log(response))
   }, [] )
 
   const renderDraftsTable = () => {
-    if (Object.keys(drafts).length) {
-      switch(Object.values(TABLES)[activeIndex]) {
+    if (!loading) {
+      switch(activeKey) {
         case TABLES.managed_drafts:
           return <DraftsTable drafts={drafts.managed_drafts} tableType={TABLES.managed_drafts} />
 
@@ -34,15 +36,19 @@ const Drafts = () => {
 
   return  (
     <>
-      <Menu
-        defaultActiveIndex={0}
-        items={MENU_ITEMS}
-        underlined
-        primary
-        accessibility={tabListBehavior}
-        aria-label="Today's events"
-        onActiveIndexChange={ (i,j) => setActiveIndex(j.activeIndex) }
-      />
+      <div style={{ width: '100%', border: '1px solid #ddd', padding: 10 }}>
+        <ResponsiveNav
+          activeKey={activeKey}
+          onSelect={setActiveKey}
+          appearance="tabs"
+        >
+          {MENU_ITEMS.map(item => (
+            <ResponsiveNav.Item key={item.eventKey} eventKey={item.eventKey}>
+              {item.label}
+            </ResponsiveNav.Item>
+          ))}
+        </ResponsiveNav>
+      </div>
       {renderDraftsTable()}
     </>
   )

@@ -6,37 +6,33 @@ export const TABLES = {
 
 export const MENU_ITEMS = [
   {
-    key: 'managed_drafts',
-    content: 'Managed Drafts',
+    eventKey: 'managed_drafts',
+    label: 'Managed Drafts',
   },
   {
-    key: 'joinable_drafts',
-    content: 'Joinable Drafts',
+    eventKey: 'joinable_drafts',
+    label: 'Joinable Drafts',
   },
   {
-    key: 'joined_drafts',
-    content: 'Joined Drafts',
+    eventKey: 'joined_drafts',
+    label: 'Joined Drafts',
   },
 ]
 
-export const DRAFTS_TABLE_HEADER = {
-  key: 'header',
-  items: [
-    {
-      content: 'Name',
-      key: 'name',
-    },
-    {
-      content: 'Manager',
-      key: 'manager',
-    },
-    {
-      content: 'Email',
-      key: 'email',
-    },
-    {
-      content: 'Actions',
-      key: 'actions',
-    }
-  ],
-}
+export const DRAFTS_TABLE_HEADERS = [
+  {
+    content: 'Name',
+    key: 'name',
+    width: 70
+  },
+  {
+    content: 'Manager',
+    key: 'manager',
+    width: 200
+  },
+  {
+    content: 'Email',
+    key: 'email',
+    width: 200
+  }
+]
