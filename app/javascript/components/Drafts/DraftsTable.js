@@ -7,7 +7,6 @@ const DraftsTable = ({drafts, tableType}) => {
   const [tableData, setTableData] = useState([])
   const [tableLoading, setTableLoading] = useState(true)
 
-
   useEffect(() => {
     let data = drafts.data.map( (draft, index) => {
       return {

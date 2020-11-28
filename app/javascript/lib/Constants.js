@@ -18,3 +18,10 @@ export const MENU_ITEMS = [
     label: 'Joined Drafts',
   },
 ]
+
+export const CREATE_DRAFT_STEPS = {
+  draft_info: 'draft_info',
+  draft_settings: 'draft_settings',
+  review: 'review',
+  send_invite: 'send_invite'
+}

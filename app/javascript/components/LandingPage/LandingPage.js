@@ -18,7 +18,7 @@ const LandingPage = () => {
             <Link to="/simulate">
               <FlexboxGrid.Item colspan={8}>colspan={8}</FlexboxGrid.Item>
             </Link>
-            <Link to="/drafts/new">
+            <Link to="/drafts/create">
               <FlexboxGrid.Item colspan={8}>colspan={8}</FlexboxGrid.Item>
             </Link>
             <Link to="/drafts">
