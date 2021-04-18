@@ -19,9 +19,10 @@ export const MENU_ITEMS = [
   },
 ]
 
-export const CREATE_DRAFT_STEPS = {
-  draft_info: 'draft_info',
+export const DRAFT_CREATION_STEPS = {
+  draft_name: 'draft_info',
+  team_name: 'team_name',
   draft_settings: 'draft_settings',
-  review: 'review',
-  send_invite: 'send_invite'
+  review_and_confirm: 'review_and_confirm',
+  send_invites: 'send_invites'
 }

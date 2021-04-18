@@ -10,12 +10,17 @@ import EditDraft from './Draft/EditDraft'
 const App = () => {
   return (
     <Switch>
+      {/* Root */}
       <Route exact path="/" component={LandingPage} />
-      <Route exact path="/drafts/create" component={CreateDraft} />
+      {/* Drafts Start */}
       <Route exact path="/drafts" component={Drafts} />
-      <Route exact path="/simulate" component={Simulate} />
+      <Route exact path="/drafts/create" component={CreateDraft} />
       <Route exact path="/draft/:id" component={Draft} />
       <Route exact path="/draft/:id/edit" component={EditDraft} />
+      {/* Drafts End */}
+
+      {/* Simulate */}
+      <Route exact path="/simulate" component={Simulate} />
       {/* <Route exact path="drafts/:id/join" /> */}
     </Switch>
   )

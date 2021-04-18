@@ -9,7 +9,7 @@ class Draft < ApplicationRecord
   validates :manager, presence: true
 
   # Callbacks
-  after_create :create_manager_memebership
+  after_create :create_manager_membership
 
   # Scopes
   scope :joinable_drafts, -> (manager) { joins(:memberships).where.not(user_id: manager.id) }
@@ -17,7 +17,7 @@ class Draft < ApplicationRecord
 
   private
 
-  def create_manager_memebership
+  def create_manager_membership
     self.memberships.create!(user: manager)
   end
 end
